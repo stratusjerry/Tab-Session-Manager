@@ -97,22 +97,44 @@ export default class Session extends Component {
               {detailText}
             </button>
           </div>
-          <div className="buttonsContainer">
-            <button
-              className="open"
-              onClick={this.handleOpenClick}
-              title={this.getOpenButtonTitle()}
-            >
-              <span>{browser.i18n.getMessage("open")}</span>
-            </button>
-            <button
-              className="remove"
-              onClick={() => {
-                removeSession(session.id);
-              }}
-            >
-              <span>{browser.i18n.getMessage("remove")}</span>
-            </button>
+          <div className={`buttonsContainer ${getSettings("closeButtonPosition") === "left" ? "leftPosition" : "rightPosition"}`}>
+            {getSettings("closeButtonPosition") === "left" ? (
+              <>
+                <button
+                  className="remove"
+                  onClick={() => {
+                    removeSession(session.id);
+                  }}
+                >
+                  <span>{browser.i18n.getMessage("remove")}</span>
+                </button>
+                <button
+                  className="open"
+                  onClick={this.handleOpenClick}
+                  title={this.getOpenButtonTitle()}
+                >
+                  <span>{browser.i18n.getMessage("open")}</span>
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  className="open"
+                  onClick={this.handleOpenClick}
+                  title={this.getOpenButtonTitle()}
+                >
+                  <span>{browser.i18n.getMessage("open")}</span>
+                </button>
+                <button
+                  className="remove"
+                  onClick={() => {
+                    removeSession(session.id);
+                  }}
+                >
+                  <span>{browser.i18n.getMessage("remove")}</span>
+                </button>
+              </>
+            )}
           </div>
         </div>
         <DetailsContainer

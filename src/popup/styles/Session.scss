@@ -26,6 +26,15 @@
     flex-direction: row;
     flex-shrink: 1;
 
+    &.leftPosition {
+      flex-direction: row-reverse;
+      
+      .remove {
+        margin-left: 0;
+        margin-right: 8px;
+      }
+    }
+
     button {
       color: var(--highlight);
       word-break: break-all;

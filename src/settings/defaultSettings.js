@@ -451,6 +451,23 @@ export default [
         type: "checkbox",
         default: true
       },
+      {
+        id: "closeButtonPosition",
+        title: "closeButtonPositionLabel",
+        captions: ["closeButtonPositionCaptionLabel"],
+        type: "select",
+        default: "right",
+        options: [
+          {
+            name: "rightLabel",
+            value: "right"
+          },
+          {
+            name: "leftLabel",
+            value: "left"
+          }
+        ]
+      },
     ]
   },
   {

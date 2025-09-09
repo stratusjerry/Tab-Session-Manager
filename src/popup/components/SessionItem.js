@@ -87,22 +87,44 @@ export default class Session extends Component {
         </button>
 
         {getSettings("isShowOpenButtons") && (
-          <div className="buttonsContainer">
-            <button
-              className="open"
-              onClick={this.handleOpenClick}
-              onContextMenu={this.handleOpenRightClick}
-              title={browser.i18n.getMessage("open")}
-            >
-              <NewWindowIcon />
-            </button>
-            <button
-              className="remove"
-              onClick={this.handleRemoveClick}
-              title={browser.i18n.getMessage("remove")}
-            >
-              <DeleteIcon />
-            </button>
+          <div className={`buttonsContainer ${getSettings("closeButtonPosition") === "left" ? "leftPosition" : "rightPosition"}`}>
+            {getSettings("closeButtonPosition") === "left" ? (
+              <>
+                <button
+                  className="remove"
+                  onClick={this.handleRemoveClick}
+                  title={browser.i18n.getMessage("remove")}
+                >
+                  <DeleteIcon />
+                </button>
+                <button
+                  className="open"
+                  onClick={this.handleOpenClick}
+                  onContextMenu={this.handleOpenRightClick}
+                  title={browser.i18n.getMessage("open")}
+                >
+                  <NewWindowIcon />
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  className="open"
+                  onClick={this.handleOpenClick}
+                  onContextMenu={this.handleOpenRightClick}
+                  title={browser.i18n.getMessage("open")}
+                >
+                  <NewWindowIcon />
+                </button>
+                <button
+                  className="remove"
+                  onClick={this.handleRemoveClick}
+                  title={browser.i18n.getMessage("remove")}
+                >
+                  <DeleteIcon />
+                </button>
+              </>
+            )}
           </div>
         )}
       </div>

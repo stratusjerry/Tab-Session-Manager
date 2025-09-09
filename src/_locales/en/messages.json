@@ -569,6 +569,18 @@
   "isShowOpenButtonsCaptionLabel": {
     "message": "Display open / delete buttons when the cursor is over the session list."
   },
+  "closeButtonPositionLabel": {
+    "message": "Close button position"
+  },
+  "closeButtonPositionCaptionLabel": {
+    "message": "Choose where to display the close/delete button relative to the open button."
+  },
+  "rightLabel": {
+    "message": "Right"
+  },
+  "leftLabel": {
+    "message": "Left"
+  },
   "sizeLabel": {
     "message": "Size"
   },
